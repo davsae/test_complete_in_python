@@ -5,14 +5,14 @@ def change(vec, p1, p2):
         vec[p1] = vec[p2]
         vec[p2] = aux
         
-def app(vec,n):
+def search(vec):
     for i in range (0, len(vec)-1):
         for j in range (i+1, len(vec)):
                 if vec[j] < vec[i]:
                         change(vec,i,j)
     return vec
 
-def search(vec, x):
+def app(vec, x):
     y=0
     rvec=[]
     re=0
@@ -38,6 +38,6 @@ def search(vec, x):
 
 if __name__ == '__main__':
     input_vec=[1,9,5,0,20,-4,12,16,7]
-    new_vec=app(input_vec,12)
-    ds=search(new_vec,12)
+    new_vec=search(input_vec)
+    ds=app(new_vec,12)
     print(ds)
